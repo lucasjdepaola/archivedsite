@@ -13,12 +13,12 @@ let testStarted = false;
 
 function grabEnglishWords() {
   fetch("./en200.txt")
-    .then(words => {
+    .then((words) => {
       words.text()
-        .then(eng => {
+        .then((eng) => {
           englishWords = eng;
-          englishWords = englishWords.split("\r\n");
-        })
+          englishWords = englishWords.split(/\r?\n/);
+        });
     });
 }
 
@@ -36,7 +36,7 @@ function generateRandomNumber(max) {
 
 typeDiv.addEventListener("click", () => {
   startTest();
-  createInputListener()
+  createInputListener();
   cursorDiv.style.left = (containerDiv.getBoundingClientRect().left + 5) + "px";
   cursorDiv.style.top = (containerDiv.getBoundingClientRect().top + 12) + "px";
 });
@@ -80,15 +80,13 @@ function createInputListener() {
       if (keyIndex >= englishWordString.length) {
         endTime = new Date();
         let wpm = calculateWpm();
-        document.getElementById("wpmoutput").innerText += "your wpm is " + Math.round(wpm);
-
+        document.getElementById("wpmoutput").innerText += "your wpm is " +
+          Math.round(wpm);
       }
     } else if (key.key === "Escape") {
       endTime = new Date();
       key.preventDefault();
       startTest();
-
     }
   });
 }
-
