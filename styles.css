@@ -1,0 +1,92 @@
+a {
+  color:rgb(182 226 252);
+  text-decoration:none;
+}
+
+body {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  background-color:black;
+}
+
+ul {
+  display:inline-block;
+  text-align:left;
+  list-style-position:inside;
+}
+
+
+#typing {
+  display:block;
+  overflow:hidden;
+  color:white;
+  margin-bottom:10px;
+  box-sizing: border-box;
+  font-family:"nerdfont";
+  text-align:center;
+  white-space:nowrap;
+}
+
+#cursor {
+  position:absolute;
+  width:2px;
+  left:-9999px;
+  height:29px;
+  background-color:white;
+}
+
+#wordList {
+  display:inline-block;
+  white-space:nowrap;
+  font-size:22px;
+  padding:10px;
+}
+
+#maintext {
+  font-family: sans-serif;
+  color:white;
+  font-size:20px;
+}
+
+#footerline {
+  margin-left:auto;
+  margin-right:auto;
+  background-color: white;
+  height: 1px;
+  width:400px;
+  margin-bottom:4px;
+}
+
+#copyright {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  font-size:12px;
+  text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+#stronglucas {
+  text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+@font-face {
+  font-family:"nerdfont";
+  src:url("./fonts/jetbrains.ttf");
+}
