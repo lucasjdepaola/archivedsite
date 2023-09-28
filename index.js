@@ -25,6 +25,32 @@ function grabEnglishWords() {
     });
 }
 
+// https://api.monkeytype.com/users/LD_/profile
+async function grabTypingStats() {
+  const link = await fetch("https://api.monkeytype.com/users/LD_/profile", {
+    headers: { "content-type": "application/json" },
+    method: "GET",
+  });
+  const data = await link.json();
+  return data;
+}
+
+async function displayTypingStats() {
+  const data = await grabTypingStats();
+  console.log(data.data.allTimeLbs.time[15].english);
+  const fifteen = data.data.allTimeLbs.time[15].english;
+  const sixty = data.data.allTimeLbs.time[60].english;
+  document.getElementById("15").innerText = fifteen;
+  document.getElementById("60").innerText = sixty;
+  if (fifteen === "undefined" || sixty === "undefined") {
+    document.getElementById("15").innerText = "527";
+    document.getElementById("60").innerText = "609";
+  }
+  document.getElementById("15").innerText += " global (15s)";
+  document.getElementById("60").innerText += " global (60s)";
+}
+displayTypingStats();
+
 function getTest(wordCount) {
   const test = [];
   for (let i = 0; i < wordCount; i++) {
