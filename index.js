@@ -36,8 +36,10 @@ async function grabTypingStats() {
 }
 
 async function displayTypingStats() {
+  //data.data.personalBests.time[15][0]; to get the 15s wpm number exactly
+  const wpmfifteen = data.data.personalBests.time[15][0];
+  const wpmsixty = data.data.personalBests.time[60][0];
   const data = await grabTypingStats();
-  console.log(data.data.allTimeLbs.time[15].english);
   const fifteen = data.data.allTimeLbs.time[15].english;
   const sixty = data.data.allTimeLbs.time[60].english;
   document.getElementById("15").innerText = fifteen;
@@ -46,8 +48,14 @@ async function displayTypingStats() {
     document.getElementById("15").innerText = "527";
     document.getElementById("60").innerText = "609";
   }
-  document.getElementById("15").innerText += " global (15s)";
-  document.getElementById("60").innerText += " global (60s)";
+  document.getElementById("15").innerText += " global (15s)",
+    " at ",
+    wpmfifteen,
+    " wpm";
+  document.getElementById("60").innerText += " global (60s)",
+    " at ",
+    wpmsixty,
+    " wpm";
 }
 displayTypingStats();
 
