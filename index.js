@@ -46,11 +46,8 @@ async function displayTypingStats() {
     document.getElementById("15").innerText = "300";
     document.getElementById("60").innerText = "609";
   } else {
-    document.getElementById("15").innerText += fifteen,
-      " global (15s)",
-      " at ",
-      wpmfifteen,
-      " wpm, ";
+    document.getElementById("15").innerText += fifteen + " global (15s)" +
+      " at " + wpmfifteen + " wpm, ";
     document.getElementById("60").innerText += sixty + " global (60s)" +
       " at " + wpmsixty + " wpm";
   }
