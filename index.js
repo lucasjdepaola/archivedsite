@@ -37,9 +37,9 @@ async function grabTypingStats() {
 
 async function displayTypingStats() {
   //data.data.personalBests.time[15][0]; to get the 15s wpm number exactly
+  const data = await grabTypingStats();
   const wpmfifteen = data.data.personalBests.time[15][0];
   const wpmsixty = data.data.personalBests.time[60][0];
-  const data = await grabTypingStats();
   const fifteen = data.data.allTimeLbs.time[15].english;
   const sixty = data.data.allTimeLbs.time[60].english;
   document.getElementById("15").innerText = fifteen;
