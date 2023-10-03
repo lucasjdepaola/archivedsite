@@ -51,11 +51,8 @@ async function displayTypingStats() {
       " at ",
       wpmfifteen,
       " wpm, ";
-    document.getElementById("60").innerText += fifteen,
-      " global (60s)",
-      " at ",
-      wpmsixty,
-      " wpm";
+    document.getElementById("60").innerText += sixty + " global (60s)" +
+      " at " + wpmsixty + " wpm";
   }
 }
 displayTypingStats();
