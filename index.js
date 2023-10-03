@@ -42,20 +42,21 @@ async function displayTypingStats() {
   const wpmsixty = data.data.personalBests.time[60][0].wpm;
   const fifteen = data.data.allTimeLbs.time[15].english;
   const sixty = data.data.allTimeLbs.time[60].english;
-  document.getElementById("15").innerText = fifteen;
-  document.getElementById("60").innerText = sixty;
   if (fifteen === "undefined" || sixty === "undefined") {
     document.getElementById("15").innerText = "300";
     document.getElementById("60").innerText = "609";
+  } else {
+    document.getElementById("15").innerText += fifteen,
+      " global (15s)",
+      " at ",
+      wpmfifteen,
+      " wpm, ";
+    document.getElementById("60").innerText += fifteen,
+      " global (60s)",
+      " at ",
+      wpmsixty,
+      " wpm";
   }
-  document.getElementById("15").innerText += " global (15s)",
-    " at ",
-    wpmfifteen,
-    " wpm, ";
-  document.getElementById("60").innerText += " global (60s)",
-    " at ",
-    wpmsixty,
-    " wpm";
 }
 displayTypingStats();
 
